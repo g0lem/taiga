@@ -1,0 +1,53 @@
+
+            <div class="roomlistcontainer">
+              <div class="profilecontainer">
+                <div class="userinfo opacityZero">
+                  <div class="profilepic">
+                    <div class="profilepiclink">
+                      <img src="{{profilePictureAddress}}" alt="Profile Picture" class="profileimg">
+                      <span class="changephoto"><i class="fa fa-camera" aria-hidden="true"></i><br>Change Profile Photo</span>
+                    </div>
+                  </div>
+                  <div class="profiletext">
+                      <div class="username">{{username}}</div>
+                      <span class="userprofilebtn">Profile</span>
+                      <span class="usersettingsbtn">Settings</span>
+                  </div>
+                </div>
+              </div>
+              <div class="roomcontainer">
+                <div class="userprofilepanel displayNone">
+                  <img src="{{profilePictureAddress}}" alt="Profile Picture" class="panelprofileimg">
+                  <div class="username">{{username}}</div>
+                  <div class="changeprofilepic changeprofilebtn">Change your profile picture</div>
+                  <div class="changeprofilecolor changeprofilebtn">Change your profile color</div>
+                  <div class="backbtn">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="usersettingspanel displayNone">
+                  <div class="changesettingsbackground changeprofilebtn">Change chat background</div>
+                  <div class="changeprofilebtn" ng-click="logOut()">Log Out</div>
+                  <div class="backbtn">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="rooms opacityZero"> <!--  opacityZero -->
+                  <div ng-repeat="room in roomlist | filter:roomSearch track by $index " ><!-- | filter:roomSearch -->
+
+                      <div class="room fullbtn" ng-click="selectRoom(room)">
+                        <div class="roomname">
+                            {{room.prettyname}}
+                        </div>
+                        <div class="peopleonroom">
+                          {{room.usersOnline.length}}<i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    
+                  </div>
+                </div>
+                <div class="searchcontainer">
+                  <input type="search" class="searchbar" ng-model="roomSearch.prettyname" placeholder="Search rooms..."/>
+                </div>
+              </div>
+            </div>

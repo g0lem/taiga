@@ -1,0 +1,60 @@
+<!-- Hello, anon
+
+<form ng-submit="changePassword()">
+Confirm pass 1: <input type="password" name="pass.verify1" ng-model="pass.verify1"> <br>
+Confirm pass 2: <input type="password" name="pass.verify2" ng-model="pass.verify2">  <br>
+
+<br> <br>
+
+
+Confirm new pass 1: <input type="password" name="pass.new1" ng-model="pass.new1">  <br>
+Confirm new pass 1: <input type="password" name="pass.new2" ng-model="pass.new2"> <br>
+
+<button>Submit</button>
+
+</form>
+
+
+<br>
+
+
+  <div>Select an image file: <input type="file" id="fileInput" /></div>
+  <div class="cropArea">
+    <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+  </div>
+  <div>Cropped Image:</div>
+  <div><img ng-src="{{myCroppedImage}}" /></div>
+  <button ng-click="handleCropUpload()">Upload</button>
+
+  </div>
+
+ -->
+
+
+<div class="overlay displayNone">  
+  <div class="imageoverlay displayNone">
+    <div>Select an image file: <input type="file" accept="image/*" id="fileInput">
+    </div>
+      <div class="cropArea">
+        <img-crop image="myImage" area-type="square" area-min-size="30" result-image="myCroppedImage"></img-crop>
+      </div>
+      <div>Cropped Image:</div>
+      <button ng-click="handleCropUpload()" >Upload</button>
+      
+  </div>
+
+  <div class="bgimageoverlay displayNone" nv-file-drop uploader="uploader">
+    <div>Select an image file: <input type="file" accept="image/*" nv-file-select uploader="uploader" accept="image/*">
+    </div>
+    <button ng-click="handleUpload()" id="bg-upload">Upload</button>
+  </div>
+</div>
+
+
+      
+
+
+
+<!--     <script src="scripts/jqueryUIHandler.js"></script> -->
+
+

@@ -1,0 +1,10 @@
+*.lnk
+*.ini
+etc.js
+roomgenerator.js
+*.swo
+*.swp
+*.xcf
+node_modules/*
+images/*
+video/*

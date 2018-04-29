@@ -1,0 +1,174 @@
+@import "fontawesome/font-awesome";           //
+@import "elements/variables";                 //
+@import "elements/fonts";                     //
+@import "elements/flex";                      //Flexbox premade classes for easier debugging
+@import "elements/xbrowser";                  //Cross Browser Optimisation and Mixins
+@import "elements/animpack/animpack";         //Animation pack with premade animations and animation mixins
+@import "elements/flatbox";                   //Flat design elements
+@import "elements/browser-default-overwrite"; //Requires xbrowser lib
+
+
+a{
+  color:#2a6496;
+}
+
+a:hover{
+  color:#0a4486;
+}
+
+.wrapper{
+  position:absolute; //absolute - get from widow size; relative - get from content size
+  width:100%;
+  height:100%;
+}
+
+.topbar{
+  position:relative;
+  top:0px;
+  width:100%;
+  height:90px;
+  background-color:$mainclr;
+  @include box-shadow(0px,0px,13px,$boxshadow);
+}
+
+.logo{
+  position:relative;
+  margin-left:auto;
+  margin-right: auto;
+  width:228px;
+  height:100%;
+}
+
+.logoimg{
+  position:relative;
+  margin-left:auto;
+  margin-right: auto;
+  margin-top:5px;
+  margin-bottom:5px;
+  height:80px;
+}
+
+//
+//
+// REGISTER/LOGIN/RESET STYLING
+//
+//
+
+.backgroundmain{
+  position:relative;
+  width:100%;
+  height:100%;
+  background-image:url("../img/background.png");
+    background-size: 1920px 1080px;
+    background-repeat: no-repeat;
+  // background-color:white;
+  // @include linear-gradient-background(1deg, #8e8b8c, #EFEFEF);
+  // @include linear-gradient-background(45deg, $blueberry , $creampink , $cream);
+  // @include animated-background(30s,3,vertical);
+}
+
+.centerpage{
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  width:80%;
+}
+
+.motto{
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  text-align:center;
+  font-size:45px;
+  text-shadow:1px 1px 2px $boxshadow;
+  color:$mainclr;
+}
+
+.box{
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left:10px;
+  margin-right:10px;
+  background-color:$mainclropacity;
+  @include box-shadow(0px,2px,7px,$boxshadow);
+
+}
+
+.register{
+  margin-right: auto;
+  margin-left: auto;  
+  margin-top:60px;
+  max-width:580px;
+  width:100%;
+}
+
+.otherlinks{
+  margin-right: auto;
+  margin-left: auto;  
+  margin-top: 30px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  max-width:580px;
+  width:100%;
+}
+
+.registertitle{
+  color:white;
+    text-shadow: 1.5px 1.5px 2px black;
+    font-weight: bold;
+    font-size:38px;
+    margin-top:12px;
+    letter-spacing: 1px;
+}
+
+.boxtext{
+  position:relative;
+  color:white;
+    text-shadow: 1.5px 1.5px 2px black;
+    font-size:36px;
+    text-align:center;
+    // font-weight: bold;
+    // letter-spacing: 1px;
+}
+
+// .boxtext>a{
+//  text-shadow: 1.5px 1.5px 2px $boxshadow;
+// }
+
+.form{
+  text-align:center;
+  margin-right:auto;
+  margin-left:auto;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+
+.centerinput{
+  position:relative;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:22px;
+  margin-bottom:22px;
+  font-family:bariol;
+    font-weight: bold;
+  line-height:inherit;
+  font-size:30px;
+  width:60%;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.send{
+    font-weight: normal;
+  font-size:34px;
+  padding-top:6px;
+  padding-bottom:6px;
+  background-color: rgba(255, 255, 255, 0.12);
+    border: none;
+    color: white;
+    text-shadow: 1.5px 1.5px 2px black;
+  @include box-shadow(0px,1.5px,1px,black);
+}

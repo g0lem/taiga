@@ -1,0 +1,58 @@
+{{init()}}
+<div class="chat displayNone">
+              <div class="panel chatview">
+                <div class="chatcontainer" nv-file-drop uploader="uploader">
+                  <button ng-click="getMoreMessages()" style="padding-bottom:16px;">Load more messages</button>
+                  <div class="chatmessage" ng-repeat="message in room_factory.messages | orderBy: 'timestamp' track by $index">
+                    <div id="message{{$index}}" class="chatbubble" ng-class="getChatBubbleForm(message.username.toLowerCase(),username.toLowerCase())">
+                      <div class="chatbubbleusername" ng-show="message.username.toLowerCase()!=username.toLowerCase()">
+                        {{message.username}}
+                      </div>
+                      <div class="chatbubbletext" ng-show="message.message_type==='text'" ng-bind-html="message.body"></div>
+
+                      <div class="chatbubbleimg" ng-show="message.message_type==='image'" >
+                        <img style="width:100%;max-width:300px;" scrolling="no" ng-src="{{showImage(message)}}">
+                      </div>
+
+                       <div class="chatbubbleimg" ng-show="message.message_type==='video'" >
+                        <video style="width:100%;max-width:300px;" controls>
+                          <source ng-src="{{showVideo(message)}}">
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- invisible divs because angular won't cooperate, help me -->
+                  <div id="bottom_message" class="opacityZero"></div>
+                </div>
+              </div>
+              <div class="panel emojibox displayNone" id="emoji_panel">
+                Emoji list goes here
+              </div>
+              <div class="panel bottom">
+                <div class="messagebox">
+                  <div class="sendemoji">
+                    <div class="squareratio">
+                      <div class="ratiocontent">
+                        <i class="fa fa-smile-o emojiboxclosed" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-down emojiboxopen displayNone" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="textmsg" contenteditable="plaintext-only" ng-model="newMessage"></div>
+                  
+                  <!-- Hidden element that is a carbon copy of $(".textmsg") -->
+                  <textarea id="input_box" type="text" ng-model="newMessage" style="display:none;"></textarea>
+
+
+                  <button class="sendmsg" ng-click="sendMessage()">
+
+                    <div class="squareratio">
+                      <div class="ratiocontent">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+</div>

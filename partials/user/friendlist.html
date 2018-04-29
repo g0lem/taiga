@@ -1,0 +1,29 @@
+<div>Friend list</div>
+<div class="loading" ng-show="loading">
+  <img class="loaderIcon" src="img/loader.gif" style="height:40px;width:40px;" />
+  Friends are loading
+</div>
+<div ng-repeat="friend in friendlist track by $index">
+<!--   <a href="#/room/{{room.roomname}}">{{room.prettyname}}</a> -->
+
+
+<!-- <span> <h3>{{user}}</h3> <button ng-click="sendFriendRequest(user)">Add Friend</button> </span> -->
+
+
+<h3>{{friend}}</h3>
+
+</div>
+
+<br><br><br>
+
+<div>Friend Requests</div>
+
+<div ng-repeat="request in friendrequests track by $index">
+<!--   <a href="#/room/{{room.roomname}}">{{room.prettyname}}</a> -->
+
+
+<span> <h3>{{request}}</h3> <button ng-click="acceptFriendRequest(request)">Accept Friend</button> <button ng-click="rejectFriendRequest(request)">Reject Friend</button>  </span> 
+
+
+
+</div>

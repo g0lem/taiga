@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Taiga - Login</title>
+	<script src="packages/jquery-1.11.3.min.js"></script>
+    <script src="packages/hello.all.js"></script>
+</head>
+<body>
+
+	<div class="form-group registerform">
+	
+		<div>
+			Enter a username
+			<input type="text" name="username" class="usernameRegisterField"/>
+		</div>
+
+		<div>
+			Enter a password
+			<input type="password" name="password" class="passwordRegisterField"/>
+		</div>
+
+		<div>
+			Enter the password again
+			<input type="password" name="passwordVerif" class="passwordVerifRegisterField"/>
+		</div>
+
+		<button type="submit" class="registerbutton">Sign Up</button>
+	
+	</div>
+
+		<div class="form-group loginform">
+	
+		
+		<div>
+			Username
+			<input type="text" name="username" class="usernameLoginField"/>
+		</div>
+
+		<div>
+			Password
+			<input type="password" name="password" class="passwordLoginField"/>
+		</div>
+
+		<button type="submit" class="loginbutton">Log In</button>
+	
+		</div>
+
+		<br>
+		<button onclick="hello('facebook').login()">Faccebook</button>
+
+		<br>
+		<img class="loaderIcon" src="img/loader.gif" style="height:40px;width:40px;" /><div class="status"></div>
+
+	<script>
+
+		$(".status").html("");
+	  $(".loaderIcon").hide();
+	
+	  $('button.registerbutton').click( function() {
+			$(".status").html("");
+	  	$(".loaderIcon").show();
+	  	var formToObjectCreatorBecauseSerializeIsShit = {
+	  		username : $('.usernameRegisterField').val() ,
+	  		password : $('.passwordRegisterField').val() ,
+	  		passwordVerif : $('.passwordVerifRegisterField').val()
+	  	}
+       	$.post( "/creating", formToObjectCreatorBecauseSerializeIsShit, function( data ) {
+       		//Replacement to log him in in. Will delete and do the register backend.
+       		if(data!="Account created!"){
+				  	$(".status").html(data);
+	  				$(".loaderIcon").hide();
+	  			}
+	  			else{
+	  				setTimeout(function(){
+					  	$(".status").html(data+" You will be redirected in 3 seconds.");
+		  				$(".loaderIcon").hide();
+		  				//window.location.href = ("/user/"+formToObjectCreatorBecauseSerializeIsShit.username);
+		  				window.location.href = ("/");
+	  				}, 3000);
+	  			}
+	  			//***
+				});
+    });
+	
+	  $('button.loginbutton').click( function() {
+			$(".status").html("");
+	  	$(".loaderIcon").show();
+	  	var formToObjectCreatorBecauseSerializeIsShit = {
+	  		username : $('.usernameLoginField').val() ,
+	  		password : $('.passwordLoginField').val() 
+	  	}
+	  	console.log(formToObjectCreatorBecauseSerializeIsShit);
+       	$.post( "/loggingIn", formToObjectCreatorBecauseSerializeIsShit, function( data ) {
+       		//Replacement to see if he's logged in. Will delete and do the login backend.
+	       	if(data!="Logged in."){
+					  $(".status").html(data);
+		  			$(".loaderIcon").hide();
+	  			}
+	  			else{
+		  			window.location.href = ("/");
+		  			//window.location.href = ("/user/"+formToObjectCreatorBecauseSerializeIsShit.username);
+	  			}
+	  			//***
+				});
+    });
+
+		$(function(){
+		 $('.registerform').find('input').on('keyup', function(e){
+		   if(e.keyCode === 13) {
+					$( "button.registerbutton" ).trigger( "click" );
+		    };
+		 });
+		});
+
+		$(function(){
+		 $('.loginform').find('input').on('keyup', function(e){
+		   if(e.keyCode === 13) {
+					$( "button.loginbutton" ).trigger( "click" );
+		    };
+		 });
+		});
+
+		 /*
+	   $('button.loginbutton').click( function() {
+       $('form.loginform').submit();
+     });
+	 */
+	
+
+
+	</script>
+
+</body>
+</html>

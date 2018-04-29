@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="TaigaApp" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=0.75">
+    <title>Taiga - Login</title>
+    <link href="css/loginpage.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="packages/jquery-1.11.3.min.js"></script>
+
+  </head>
+  <body>
+    <div class="wrapper">  
+      <div class="backgroundmain">
+
+        <div class="topbar">
+          <div class="logo">
+            <a href="./">
+              <img src="img/taigaLogoTransparent.png" alt="Taiga" class="logoimg">
+            </a>
+          </div>  
+        </div>
+        <div class="centerpage">
+          <div class="motto"><br>
+            Talk to people who like what you like.
+          </div>
+
+          <div class="box register">
+            <div class="form">
+              <!-- <div class="registertitle">Login</div> -->
+              <input class="centerinput" id="username" type="text" placeholder="Username"/>
+              <input class="centerinput" id="pass" type="password" placeholder="Password"/>
+              <button class="centerinput send" type="submit" id="login" class="send">Login</button>
+            </div>
+            <div id="status" align="center"></div>
+          </div>
+
+          <div class="box otherlinks">
+            <div class="boxtext">
+              <div style="margin-bottom:4px;">
+                Need an account?<br>
+                <a href="/register">Create an account</a>
+              </div>
+              <div>
+                Forgot your password?<br>
+                <a href="./reset">Reset Password</a>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+
+      if($(".motto").height()<=100&&$( window ).height()<=745){
+        $(".wrapper").css( "position", "relative" );
+      }
+      else if($(".motto").height()>100&&$(".motto").height()<=150&&$( window ).height()<=797){
+        $(".wrapper").css( "position", "relative" );
+      }
+      else if($(".motto").height()>150&&$( window ).height()<=846){
+        $(".wrapper").css( "position", "relative" );
+      }
+      else{
+        $(".wrapper").css( "position", "absolute" );        
+      }
+
+      $( window ).resize(function() {
+        if($(".motto").height()<=100&&$( window ).height()<=745){
+          $(".wrapper").css( "position", "relative" );
+        }
+        else if($(".motto").height()>100&&$(".motto").height()<=150&&$( window ).height()<=797){
+          $(".wrapper").css( "position", "relative" );
+        }
+        else if($(".motto").height()>150&&$( window ).height()<=846){
+          $(".wrapper").css( "position", "relative" );
+        }
+        else{
+          $(".wrapper").css( "position", "absolute" );        
+        }
+      });
+
+    </script>
+    <script src="scripts/basic-ui.js"></script>
+  </body>
+</html>

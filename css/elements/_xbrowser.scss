@@ -1,0 +1,31 @@
+@mixin enable-hardware-acceleration(){ 
+  //Enabling Hardware Acceleration by triggering 3D axis
+  -webkit-transform: translateZ(0);
+  -khtml-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+// @mixin text-shadow($x, $y, $blur, $color) {
+//     text-shadow: $x $y $blur $color;
+// }
+
+@mixin box-shadow($top, $left, $blur, $color, $insetamt:"", $inset:""){
+  -webkit-box-shadow: unquote($inset) $top $left $blur unquote($insetamt) $color;
+  -moz-box-shadow:    unquote($inset) $top $left $blur unquote($insetamt) $color;
+  box-shadow:         unquote($inset) $top $left $blur unquote($insetamt) $color;
+}
+
+@mixin widthSubstract($a,$b){
+  width: -webkit-calc(#{$a} - #{$b});
+  width:    -moz-calc(#{$a} - #{$b});
+  width:         calc(#{$a} - #{$b});
+}
+
+@mixin heightSubstract($a,$b){
+  height: -webkit-calc(#{$a} - #{$b});
+  height:    -moz-calc(#{$a} - #{$b});
+  height:         calc(#{$a} - #{$b});
+}

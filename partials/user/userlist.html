@@ -1,0 +1,26 @@
+
+            <div class="userlistcontainer">
+              <div class="usercontainer displayNone">
+                <div class="userstitle">
+                  People on room<br>
+                  {{prettyname}}
+                </div>
+                <div class="users">
+                  <div class="user fullbtn" ng-repeat="user in userlist track by $index">
+                    {{user}} <button ng-click="sendFriendRequest(user)">Add friend</button>
+                  </div>
+                  Friend list:
+
+                   <div class="user fullbtn" ng-repeat="friend in friendlist track by $index">
+                    {{friend}} <button ng-click="removeFriend(friend)">✗</button>
+                  </div>
+
+                  <br>
+
+                  Friend requests:
+                   <div class="user fullbtn" ng-repeat="friend_request in friend_requests track by $index">
+                    {{friend_request}} <button ng-click="rejectFriendRequest(friend_request)">✗</button> <button ng-click="acceptFriendRequest(friend_request)">✓</button>
+                  </div>
+                </div>
+              </div>
+            </div>

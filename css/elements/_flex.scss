@@ -1,0 +1,110 @@
+@mixin flexbox($direction, $justifycontent, $alignitems: "") {
+  display:flex;
+  display:-webkit-flex;
+  display:-moz-flex;
+  display:-ms-flex;
+
+  @if $direction == "rw"{
+  flex-flow:row wrap;
+  } @else if $direction == "rn"{
+  flex-flow:row nowrap;
+  } @else if $direction == "cw"{
+  flex-flow:column wrap;
+  } @else if $direction == "cn"{
+  flex-flow:column nowrap;
+  }
+
+  @if $justifycontent == "sa"{
+  justify-content:space-around;
+  } @else if $justifycontent == "sb"{
+  justify-content:space-between;
+  } @else if $justifycontent == "c"{
+  justify-content:center;
+  } @else if $justifycontent == "fs"{
+  justify-content:flex-start;
+  }
+
+
+  @if $alignitems == "sa"{
+  align-items:space-around;
+  } @else if $alignitems == "sb"{
+  align-items:space-between;
+  } @else if $alignitems == "c"{
+  align-items:center;
+  } @else if $alignitems == "fs"{
+  align-items:flex-start;
+  }
+}
+
+// .rsbw{
+//   display:flex;
+//   display:-webkit-flex;
+//   display:-moz-flex;
+//   display:-ms-flex;
+//   flex-flow:row wrap;
+//   justify-content:space-between;
+//   align-items:center;
+// }
+// .rsbn{
+//   display:-webkit-flex;
+//   display:-moz-flex;
+//   display:-ms-flex;
+//   display:flex;
+//   flex-flow:row nowrap;
+//   justify-content:space-between;
+//   align-items:center;
+// }
+// .rsaw{
+//   display:-webkit-flex;
+//   display:-moz-flex;
+//   display:-ms-flex;
+//   display:flex;
+//   flex-flow:row wrap;
+//   justify-content:space-around;
+//   align-items:center;
+// }
+// .rcw{
+//   display:-webkit-flex;
+//   display:-moz-flex;
+//   display:-ms-flex;
+//   display:flex;
+//   flex-flow:row wrap;
+//   justify-content:center;
+//   align-items:center;
+// }
+// .rcn{
+//   display:-webkit-flex;
+//   display:-moz-flex;
+//   display:-ms-flex;
+//   display:flex;
+//   flex-flow:row nowrap;
+//   justify-content:center;
+//   align-items:center;
+// }
+// .rsan{
+//   display:-webkit-flex;
+//   display:-moz-flex;
+//   display:-ms-flex;
+//   display:flex;
+//   flex-flow:row nowrap;
+//   justify-content:space-around;
+//   align-items:center;
+// }
+// .rfsn{
+//   display:-webkit-flex;
+//   display:-moz-flex;
+//   display:-ms-flex;
+//   display:flex;
+//   flex-flow:row nowrap;
+//   justify-content:flex-start;
+//   align-items:center;
+// }
+// .rsaw-st{
+//   display:-webkit-flex;
+//   display:-moz-flex;
+//   display:-ms-flex;
+//   display:flex;
+//   flex-flow:row wrap;
+//   justify-content:space-around;
+//   align-items:flex-start;
+// }

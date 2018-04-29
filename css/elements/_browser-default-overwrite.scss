@@ -1,0 +1,17 @@
+body{
+  @include enable-hardware-acceleration();
+  padding:0px;
+  margin:0px;
+}
+
+a{
+  color:white;
+  text-decoration: none;
+}
+a:hover{
+  color:white;
+  text-decoration: none;
+}
+a:visited{
+  text-decoration: none;
+}

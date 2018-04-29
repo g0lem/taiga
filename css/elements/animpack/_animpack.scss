@@ -1,0 +1,15 @@
+@import "background-gradient";
+
+@mixin transition-timing-function($type){
+    -webkit-transition-timing-function: $type;
+    -moz-transition-timing-function: $type;
+    -o-transition-timing-function: $type;
+    transition-timing-function: $type;
+}
+
+@mixin transition-duration($time){
+    -webkit-transition-duration: $time;
+    -moz-transition-duration: $time;
+    -o-transition-duration: $time;
+    transition-duration: $time;
+}
